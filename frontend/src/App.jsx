@@ -5,6 +5,8 @@ import SideMenu from './components/SideMenu';
 import ChatBox from './components/ChatBox';
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     getModels();
   }, []);
@@ -41,6 +43,7 @@ const App = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
+    setIsLoading(true);
     let chatLogNew = [...chatLog, { user: 'me', message: `${chatInput}` }];
     setChatInput('');
     setChatLog(chatLogNew);
@@ -73,6 +76,7 @@ const App = () => {
     var scrollToTheBottomChatLog =
       document.getElementsByClassName('chat-log')[0];
     scrollToTheBottomChatLog.scrollTop = scrollToTheBottomChatLog.scrollHeight;
+    setIsLoading(false);
   };
 
   const handleTemp = temp => {
@@ -101,6 +105,7 @@ const App = () => {
         chatLog={chatLog}
         setChatInput={setChatInput}
         handleSubmit={handleSubmit}
+        isLoading={isLoading}
       />
     </div>
   );

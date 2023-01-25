@@ -2,9 +2,16 @@ import OpenAISVGLogo from '../icons/OpenAISVGLogo';
 import Hero from './Hero';
 import { motion } from 'framer-motion';
 import { useTypewriter } from 'react-simple-typewriter';
+import Spinner from './Spinner';
 
 // Primary Chat Window
-const ChatBox = ({ chatLog, setChatInput, handleSubmit, chatInput }) => {
+const ChatBox = ({
+  chatLog,
+  setChatInput,
+  handleSubmit,
+  chatInput,
+  isLoading,
+}) => {
   const handleUserKeyPress = e => {
     if (e.key === 'Enter' && e.shiftKey === false) {
       handleSubmit(e);
@@ -16,7 +23,7 @@ const ChatBox = ({ chatLog, setChatInput, handleSubmit, chatInput }) => {
       {chatLog.length === 0 && <Hero />}
       <div className='chat-log'>
         {chatLog.map((message, index) => (
-          <ChatMessage key={index} message={message} />
+          <ChatMessage key={index} message={message} isLoading={isLoading} />
         ))}
       </div>
       <div className='chat-input-holder'>
@@ -37,7 +44,7 @@ const ChatBox = ({ chatLog, setChatInput, handleSubmit, chatInput }) => {
 };
 
 // Individual Chat Message
-const ChatMessage = ({ message }) => {
+const ChatMessage = ({ message, isLoading }) => {
   const [text] = useTypewriter({
     words: [message.message],
     typeSpeed: 15,
@@ -57,6 +64,7 @@ const ChatMessage = ({ message }) => {
           </div>
           <div className='message'>
             {' '}
+            {isLoading && <Spinner />}
             {message.user === 'gpt' ? text.trimStart() : message.message}
           </div>
         </div>
