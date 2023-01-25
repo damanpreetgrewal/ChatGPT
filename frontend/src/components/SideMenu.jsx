@@ -13,7 +13,7 @@ const SideMenu = ({
       <span>+</span>New Chat
     </div>
     <div className='models'>
-      <label className='side-label'>Model</label>
+      <label className='side-label'>Engine</label>
       <select
         //Active if model selected is Current Model
         value={currentModel}
@@ -38,8 +38,9 @@ const SideMenu = ({
         onClick={() => setCurrentModel('text-davinci-003')}
       />
       <span className='info'>
-        The model parameter controls the engine used to generate the response.
-        Davinci produces the best result as its the most recently updated.
+        This parameter controls the engine used to generate the response.
+        Davinci produces the best result as its the most recently updated
+        (2021).
       </span>
       <label className='side-label'>Temperature</label>
       <input

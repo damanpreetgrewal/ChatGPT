@@ -7,7 +7,7 @@ function Hero() {
     <div className='hero-container'>
       <h1 className='hero-heading'>ChatGPT POC</h1>
       <div className='info-container'>
-        <div className='info-sub-container'>
+        <div className='info-sub-container container1'>
           <div className='info-heading'>
             <svg
               className='hero-svg'
@@ -33,7 +33,7 @@ function Hero() {
           <HeroInfo info={'How do I make an HTTP request in Javascript?'} />
         </div>
 
-        <div className='info-sub-container'>
+        <div className='info-sub-container container2'>
           <div className='info-heading'>
             <svg
               className='hero-svg'
@@ -61,7 +61,7 @@ function Hero() {
           <HeroInfo info={'Trained to decline inappropriate requests'} />
         </div>
 
-        <div className='info-sub-container'>
+        <div className='info-sub-container container3'>
           <div className='info-heading'>
             <svg
               className='hero-svg'

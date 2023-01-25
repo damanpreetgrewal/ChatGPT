@@ -4,7 +4,7 @@
   align-items: center;
   height: 80%;
   flex-direction: column;
-  padding-top: 7rem;
+  padding-top: 3rem;
 }
 
 .info-container {
@@ -30,7 +30,7 @@
   flex-direction: column;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 680px) {
   .info-heading {
     margin-top: 50px;
     margin-left: 40px;
@@ -51,6 +51,13 @@
   }
 
   .hero-container {
-    height: 70%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container2,
+  .container3 {
+    display: none;
   }
 }
