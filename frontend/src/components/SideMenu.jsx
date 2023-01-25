@@ -34,7 +34,7 @@ const SideMenu = ({
       </select>
 
       <Button
-        text='Smart - text - Davinci'
+        text='Text - Davinci'
         onClick={() => setCurrentModel('text-davinci-003')}
       />
       <span className='info'>

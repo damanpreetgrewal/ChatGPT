@@ -1,11 +1,11 @@
 import OpenAISVGLogo from '../icons/OpenAISVGLogo';
 import Hero from './Hero';
-
+import { motion } from 'framer-motion';
 
 // Primary Chat Window
 const ChatBox = ({ chatLog, setChatInput, handleSubmit, chatInput }) => {
   const handleUserKeyPress = e => {
-    if (e.key === 'Enter' && e.shiftKey == false) {
+    if (e.key === 'Enter' && e.shiftKey === false) {
       handleSubmit(e);
     }
   };
@@ -38,14 +38,21 @@ const ChatBox = ({ chatLog, setChatInput, handleSubmit, chatInput }) => {
 // Individual Chat Message
 const ChatMessage = ({ message }) => {
   return (
-    <div className={`chat-message ${message.user === 'gpt' && 'chatgpt'}`}>
-      <div className='chat-message-center'>
-        <div className={`avatar ${message.user === 'gpt' && 'chatgpt'}`}>
-          {message.user === 'gpt' ? <OpenAISVGLogo /> : <div>You</div>}
+    <motion.div
+      // fade messages in
+      initial={{ opacity: 0.5 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+    >
+      <div className={`chat-message ${message.user === 'gpt' && 'chatgpt'}`}>
+        <div className='chat-message-center'>
+          <div className={`avatar ${message.user === 'gpt' && 'chatgpt'}`}>
+            {message.user === 'gpt' ? <OpenAISVGLogo /> : <div>You</div>}
+          </div>
+          <div className='message'>{message.message}</div>
         </div>
-        <div className='message'>{message.message}</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
