@@ -3,6 +3,7 @@
   "proxy": "http://localhost:5000",
   "version": "1.0.0",
   "private": true,
+  "author": "Damanpreet Grewal",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
