@@ -16,7 +16,7 @@ const App = () => {
   const [chatLog, setChatLog] = useState([
     {
       user: 'gpt',
-      message: 'How can I help you today?',
+      message: 'Hi, I am an AI Chat Bot! How can I help you today?',
     },
   ]);
 

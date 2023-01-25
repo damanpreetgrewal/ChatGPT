@@ -184,10 +184,11 @@
 
 .side-label {
   font-size: 0.9em;
-  margin-top: 1em;
+  margin-top: 2em;
   margin-bottom: 0.5em;
   padding-bottom: 0em;
   display: block;
+
 }
 
 .form {
