@@ -56,7 +56,9 @@
 }
 
 @media screen and (max-width: 600px) {
-  .container2,
+  .container2 {
+    display: none;
+  }
   .container3 {
     display: none;
   }
