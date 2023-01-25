@@ -45,7 +45,7 @@ const SideMenu = ({
       <input
         className='select-models'
         type='number'
-        onChange={e => setTemperature(e.target.value)}
+        onChange={e => setTemperature(parseFloat(e.target.value))}
         min='0'
         max='1'
         step='0.1'
