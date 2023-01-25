@@ -1,4 +1,4 @@
-export const sampleData = [
+const sampleData = [
   {
     Q: 'PwC is based out of how many countries?',
     A: 'It is based out of 152 countries all across the globe having around 688 locations.',
@@ -35,7 +35,7 @@ export const sampleData = [
   },
   {
     Q: 'How many PwC clients are listed under Fortune Global 500?',
-    A: 'Around 84% is listed under Fortune Global 500',
+    A: 'Around 84% of its clients are listed under Fortune Global 500',
   },
   {
     Q: 'In 2014 which company did Pwc acquired?',
@@ -71,3 +71,5 @@ export const sampleData = [
     A: 'Samuel Lowe Price creates firm in U.K.​',
   },
 ];
+
+module.exports = sampleData;
