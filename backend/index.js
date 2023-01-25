@@ -38,7 +38,7 @@ app.post('/', async (req, res) => {
   const requestObj = {
     model: `${currentModel}`, //"code-davinci-003",
     prompt: `${prePrompt} ${message}\n`,
-    max_tokens: 100,
+    max_tokens: 1000,
     temperature,
     top_p: 1,
     frequency_penalty: 0.0,
