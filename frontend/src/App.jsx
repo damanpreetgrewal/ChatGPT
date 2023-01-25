@@ -13,12 +13,6 @@ const App = () => {
   const [models, setModels] = useState([]);
   const [temperature, setTemperature] = useState(0);
   const [currentModel, setCurrentModel] = useState('text-davinci-003');
-  // const [chatLog, setChatLog] = useState([
-  //   {
-  //     user: 'gpt',
-  //     message: 'Hi, I am an AI Chat Bot! How can I help you today?',
-  //   },
-  // ]);
   const [chatLog, setChatLog] = useState([]);
 
   //Clear Chats
@@ -55,6 +49,12 @@ const App = () => {
     //Sending it as a message to localhost:3000 as a post Request
     const messages = chatLogNew.map(message => message.message).join('\n');
 
+    let max_tokens = 1000;
+
+    if (currentModel === 'code-davinci-002') {
+      max_tokens = 60;
+    }
+
     const response = await fetch('http://localhost:5000/', {
       method: 'POST',
       headers: {
@@ -64,6 +64,7 @@ const App = () => {
         message: messages,
         currentModel,
         temperature,
+        max_tokens,
       }),
     });
 
@@ -94,7 +95,7 @@ const App = () => {
         temperature={temperature}
         clearChat={clearChat}
       />
-     
+
       <ChatBox
         chatInput={chatInput}
         chatLog={chatLog}

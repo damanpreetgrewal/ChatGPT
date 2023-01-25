@@ -23,7 +23,7 @@ app.use(cors());
 const port = process.env.PORT || 5000;
 
 app.post('/', async (req, res) => {
-  const { message, currentModel, temperature } = req.body;
+  const { message, currentModel, temperature, max_tokens } = req.body;
 
   console.log(sampleData);
 
@@ -38,7 +38,7 @@ app.post('/', async (req, res) => {
   const requestObj = {
     model: `${currentModel}`, //"code-davinci-003",
     prompt: `${prePrompt} ${message}\n`,
-    max_tokens: 1000,
+    max_tokens,
     temperature,
     top_p: 1,
     frequency_penalty: 0.0,
