@@ -27,7 +27,7 @@ function Hero() {
             </svg>
             <h3>Examples</h3>
           </div>
-          <HeroInfo info={'Explain quantum computing in simple terms'} />
+          <HeroInfo info={'Ask general questions about PWC!'} />
           <HeroInfo
             info={'Got any creative ideas for a 10 year old’s birthday?'}
           />
