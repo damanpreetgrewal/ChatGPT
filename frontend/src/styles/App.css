@@ -104,7 +104,7 @@
   background-color: #444654;
 }
 .chat-message-center {
-  max-width: 640px;
+  max-width: 740px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -135,6 +135,7 @@
 .message {
   padding-left: 40px;
   padding-right: 40px;
+  width: 100%;
 }
 
 @keyframes App-logo-spin {

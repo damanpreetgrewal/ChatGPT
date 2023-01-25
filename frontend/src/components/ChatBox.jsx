@@ -1,28 +1,36 @@
 import OpenAISVGLogo from '../icons/OpenAISVGLogo';
 
 // Primary Chat Window
-const ChatBox = ({ chatLog, setChatInput, handleSubmit, chatInput }) => (
-  <section className='chatbox'>
-    <div className='chat-log'>
-      {chatLog.map((message, index) => (
-        <ChatMessage key={index} message={message} />
-      ))}
-    </div>
-    <div className='chat-input-holder'>
-      <form className='form' onSubmit={handleSubmit}>
-        <input
-          rows='1'
-          value={chatInput}
-          onChange={e => setChatInput(e.target.value)}
-          className='chat-input-textarea'
-        ></input>
-        <button className='submit' type='submit'>
-          Submit
-        </button>
-      </form>
-    </div>
-  </section>
-);
+const ChatBox = ({ chatLog, setChatInput, handleSubmit, chatInput }) => {
+  const handleUserKeyPress = e => {
+    if (e.key === 'Enter' && e.shiftKey == false) {
+      handleSubmit(e);
+    }
+  };
+
+  return (
+    <section className='chatbox'>
+      <div className='chat-log'>
+        {chatLog.map((message, index) => (
+          <ChatMessage key={index} message={message} />
+        ))}
+      </div>
+      <div className='chat-input-holder'>
+        <form className='form' onSubmit={handleSubmit}>
+          <textarea
+            value={chatInput}
+            onChange={e => setChatInput(e.target.value)}
+            className='chat-input-textarea'
+            onKeyPress={handleUserKeyPress}
+          ></textarea>
+          <button className='submit' type='submit'>
+            Submit
+          </button>
+        </form>
+      </div>
+    </section>
+  );
+};
 
 // Individual Chat Message
 const ChatMessage = ({ message }) => {

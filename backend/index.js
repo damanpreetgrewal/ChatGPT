@@ -40,6 +40,8 @@ app.post('/', async (req, res) => {
 
   const response = await openai.createCompletion(requestObj);
 
+  console.log('Last Response: ', response.data.choices[0].text);
+  
   res.json({
     message: response.data.choices[0].text,
   });
