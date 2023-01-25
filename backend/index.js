@@ -28,7 +28,7 @@ app.post('/', async (req, res) => {
   console.log(sampleData);
 
   let prePrompt =
-    'I am a highly intelligent question answering bot. If you ask me a question that is rooted in truth, I will give you the answer. If you ask me a question that is nonsense, trickery, or has no clear answer, I will respond with "Unknown"';
+    'I am a highly intelligent question answering bot. If you ask me a question that is rooted in truth, I will give you the answer.';
   sampleData.forEach(obj => {
     prePrompt += 'Q :' + obj.Q + '\n' + 'A :' + obj.A + '\n\n';
   });
