@@ -22,7 +22,7 @@ const App = () => {
 
   //Get all Models
   const getModels = () => {
-    fetch('http://localhost:5000/models')
+    fetch('/models')
       .then(res => res.json())
       .then(data => {
         //set Models in order alphabetically
@@ -55,7 +55,7 @@ const App = () => {
       max_tokens = 60;
     }
 
-    const response = await fetch('http://localhost:5000/', {
+    const response = await fetch('/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

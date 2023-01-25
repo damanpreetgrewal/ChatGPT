@@ -1,8 +1,7 @@
 import OpenAISVGLogo from '../icons/OpenAISVGLogo';
 import Hero from './Hero';
 import { motion } from 'framer-motion';
-import { Cursor, useTypewriter } from 'react-simple-typewriter';
-import { useState, useEffect } from 'react';
+import { useTypewriter } from 'react-simple-typewriter';
 
 // Primary Chat Window
 const ChatBox = ({ chatLog, setChatInput, handleSubmit, chatInput }) => {
