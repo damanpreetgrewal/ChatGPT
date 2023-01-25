@@ -36,7 +36,7 @@ app.post('/', async (req, res) => {
   console.log(prePrompt);
 
   const requestObj = {
-    model: `${currentModel}`, //"code-davinci-003",
+    model: `${currentModel}`, //"text-davinci-003",
     prompt: `${prePrompt} ${message}\n`,
     max_tokens,
     temperature,
@@ -49,7 +49,7 @@ app.post('/', async (req, res) => {
 
   const response = await openai.createCompletion(requestObj);
 
-  console.log('Last Response: ', response.data.choices[0].text);
+  console.log('Last Response: ', response.data.choices[0]);
 
   res.json({
     message: response.data.choices[0].text,
