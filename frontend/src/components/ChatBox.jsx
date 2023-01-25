@@ -1,4 +1,6 @@
 import OpenAISVGLogo from '../icons/OpenAISVGLogo';
+import Hero from './Hero';
+
 
 // Primary Chat Window
 const ChatBox = ({ chatLog, setChatInput, handleSubmit, chatInput }) => {
@@ -10,6 +12,7 @@ const ChatBox = ({ chatLog, setChatInput, handleSubmit, chatInput }) => {
 
   return (
     <section className='chatbox'>
+      {chatLog.length === 0 && <Hero />}
       <div className='chat-log'>
         {chatLog.map((message, index) => (
           <ChatMessage key={index} message={message} />

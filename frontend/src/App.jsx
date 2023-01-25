@@ -13,12 +13,13 @@ const App = () => {
   const [models, setModels] = useState([]);
   const [temperature, setTemperature] = useState(0);
   const [currentModel, setCurrentModel] = useState('text-davinci-003');
-  const [chatLog, setChatLog] = useState([
-    {
-      user: 'gpt',
-      message: 'Hi, I am an AI Chat Bot! How can I help you today?',
-    },
-  ]);
+  // const [chatLog, setChatLog] = useState([
+  //   {
+  //     user: 'gpt',
+  //     message: 'Hi, I am an AI Chat Bot! How can I help you today?',
+  //   },
+  // ]);
+  const [chatLog, setChatLog] = useState([]);
 
   //Clear Chats
   const clearChat = () => {
@@ -93,6 +94,7 @@ const App = () => {
         temperature={temperature}
         clearChat={clearChat}
       />
+     
       <ChatBox
         chatInput={chatInput}
         chatLog={chatLog}
