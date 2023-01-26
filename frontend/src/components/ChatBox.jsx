@@ -11,6 +11,7 @@ const ChatBox = ({
   handleSubmit,
   chatInput,
   isLoading,
+  isDisabled,
 }) => {
   const handleUserKeyPress = e => {
     if (e.key === 'Enter' && e.shiftKey === false) {
@@ -34,7 +35,7 @@ const ChatBox = ({
             className='chat-input-textarea'
             onKeyPress={handleUserKeyPress}
           ></textarea>
-          <button className='submit' type='submit'>
+          <button className='submit' type='submit' disabled={isDisabled}>
             Submit
           </button>
         </form>

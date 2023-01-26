@@ -6,16 +6,20 @@ import ChatBox from './components/ChatBox';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    getModels();
-  }, []);
-
   const [chatInput, setChatInput] = useState('');
   const [models, setModels] = useState([]);
   const [temperature, setTemperature] = useState(0);
   const [currentModel, setCurrentModel] = useState('text-davinci-003');
   const [chatLog, setChatLog] = useState([]);
+  const [isDisabled, setIsDisabled] = useState(chatInput.length === 0);
+
+  useEffect(() => {
+    getModels();
+  }, []);
+
+  useEffect(() => {
+    setIsDisabled(chatInput.length === 0);
+  }, [chatInput, setIsDisabled]);
 
   //Clear Chats
   const clearChat = () => {
@@ -106,6 +110,7 @@ const App = () => {
         setChatInput={setChatInput}
         handleSubmit={handleSubmit}
         isLoading={isLoading}
+        isDisabled={isDisabled}
       />
     </div>
   );
