@@ -60,7 +60,7 @@ const App = () => {
     let max_tokens = 1000;
 
     if (currentModel === 'code-davinci-002') {
-      max_tokens = 60;
+      max_tokens = 64;
     }
 
     const response = await fetch('/', {
