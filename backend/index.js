@@ -25,7 +25,7 @@ const port = process.env.PORT || 5000;
 app.post('/', async (req, res) => {
   const { message, currentModel, temperature, max_tokens } = req.body;
 
-  console.log(sampleData);
+  // console.log(sampleData);
 
   let prePrompt =
     'I am a highly intelligent question answering bot for PwC. If you ask me a question that is rooted in truth, I will give you the answer.';
@@ -33,7 +33,7 @@ app.post('/', async (req, res) => {
     prePrompt += 'Q :' + obj.Q + '\n' + 'A :' + obj.A + '\n\n';
   });
 
-  console.log(prePrompt);
+  // console.log(prePrompt);
 
   const requestObj = {
     model: `${currentModel}`, //"text-davinci-003",
@@ -45,7 +45,7 @@ app.post('/', async (req, res) => {
     presence_penalty: 0.0,
   };
 
-  console.log('Request Sent : ', requestObj);
+  // console.log('Request Sent : ', requestObj);
 
   const response = await openai.createCompletion(requestObj);
 
