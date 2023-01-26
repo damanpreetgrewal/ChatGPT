@@ -51,6 +51,16 @@ const ChatMessage = ({ message, isLoading }) => {
     typeSpeed: 15,
   });
 
+  const index = text.indexOf('\n');
+  const gptResponse = text
+    .substring(index + 1)
+    .split('\n')
+    .map((str, index) => (
+      <p key={index} id={index}>
+        {str}
+      </p>
+    ));
+
   return (
     <motion.div
       // fade messages in
@@ -63,10 +73,10 @@ const ChatMessage = ({ message, isLoading }) => {
           <div className={`avatar ${message.user === 'gpt' && 'chatgpt'}`}>
             {message.user === 'gpt' ? <OpenAISVGLogo /> : <div>You</div>}
           </div>
-          <div className='message'>
+          <div className='message' id='textarea-nl'>
             {' '}
             {isLoading && <Spinner />}
-            {message.user === 'gpt' ? text.trimStart() : message.message}
+            {message.user === 'gpt' ? gptResponse : message.message}
           </div>
         </div>
       </div>

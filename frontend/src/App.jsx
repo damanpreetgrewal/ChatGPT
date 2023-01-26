@@ -48,6 +48,7 @@ const App = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     setIsLoading(true);
+    console.log(chatInput);
     let chatLogNew = [...chatLog, { user: 'me', message: `${chatInput}` }];
     setChatInput('');
     setChatLog(chatLogNew);
