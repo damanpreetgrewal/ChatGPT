@@ -35,7 +35,12 @@ const ChatBox = ({
             className='chat-input-textarea'
             onKeyPress={handleUserKeyPress}
           ></textarea>
-          <button className='submit' type='submit' disabled={isDisabled}>
+          <button
+            className={isDisabled ? 'btn-disabled' : 'submit'}
+            aria-disabled={isDisabled}
+            type='submit'
+            disabled={isDisabled}
+          >
             Submit
           </button>
         </form>
@@ -53,7 +58,7 @@ const ChatMessage = ({ message, isLoading }) => {
 
   const index = text.indexOf('\n');
   const gptResponse = text
-    .substring(index + 1)
+    .substring(index)
     .split('\n')
     .map((str, index) => (
       <p key={index} id={index}>

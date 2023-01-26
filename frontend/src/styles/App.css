@@ -219,4 +219,10 @@
 
 #textarea-nl {
   white-space: pre-line;
+  
+}
+
+.btn-disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
