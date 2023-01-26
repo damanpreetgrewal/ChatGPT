@@ -1,16 +1,15 @@
 .hero-container {
   display: flex;
-  justify-content: center;
   align-items: center;
   height: 80%;
   flex-direction: column;
-  padding-top: 3rem;
   overflow: auto;
 }
 
 .info-container {
   display: flex;
   flex-direction: column;
+  margin: 4rem;
 }
 
 .info-heading {
@@ -33,9 +32,9 @@
 
 @media (min-width: 680px) {
   .info-heading {
-    margin-top: 50px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     flex-direction: column;
   }
 
