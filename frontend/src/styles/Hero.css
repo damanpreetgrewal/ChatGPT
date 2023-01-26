@@ -5,6 +5,7 @@
   height: 80%;
   flex-direction: column;
   padding-top: 3rem;
+  overflow: auto;
 }
 
 .info-container {
@@ -61,5 +62,8 @@
   }
   .container3 {
     display: none;
+  }
+  .hero-container {
+    overflow: auto;
   }
 }
