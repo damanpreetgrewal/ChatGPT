@@ -11,14 +11,14 @@ const App = () => {
   const [temperature, setTemperature] = useState(0);
   const [currentModel, setCurrentModel] = useState('text-davinci-003');
   const [chatLog, setChatLog] = useState([]);
-  const [isDisabled, setIsDisabled] = useState(chatInput.length === 0);
+  const [isDisabled, setIsDisabled] = useState(chatInput.trim().length === 0);
 
   useEffect(() => {
     getModels();
   }, []);
 
   useEffect(() => {
-    setIsDisabled(chatInput.length === 0);
+    setIsDisabled(chatInput.trim().length === 0);
   }, [chatInput, setIsDisabled]);
 
   //Clear Chats

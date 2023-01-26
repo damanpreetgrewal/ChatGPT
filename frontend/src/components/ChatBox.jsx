@@ -14,7 +14,7 @@ const ChatBox = ({
   isDisabled,
 }) => {
   const handleUserKeyPress = e => {
-    if (e.key === 'Enter' && e.shiftKey === false) {
+    if (e.key === 'Enter' && e.shiftKey === false && !isDisabled) {
       handleSubmit(e);
     }
   };
