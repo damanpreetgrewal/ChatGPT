@@ -104,7 +104,6 @@ const App = () => {
         temperature={temperature}
         clearChat={clearChat}
       />
-
       <ChatBox
         chatInput={chatInput}
         chatLog={chatLog}

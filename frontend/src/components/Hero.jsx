@@ -5,7 +5,7 @@ import HeroInfo from './HeroInfo';
 function Hero() {
   return (
     <div className='hero-container'>
-      <h1 className='hero-heading'>ChatGPT POC</h1>
+      <h1 className='hero-heading'>ChatGPT</h1>
       <div className='info-container'>
         <div className='info-sub-container container1'>
           <div className='info-heading'>
