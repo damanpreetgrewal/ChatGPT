@@ -48,40 +48,51 @@ const App = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     setIsLoading(true);
-    console.log(chatInput);
-    let chatLogNew = [...chatLog, { user: 'me', message: `${chatInput}` }];
-    setChatInput('');
-    setChatLog(chatLogNew);
+    if (chatInput !== null && chatInput !== '') {
+      let chatLogNew = [...chatLog, { user: 'me', message: `${chatInput}` }];
+      if (chatLogNew[0].message !== '') {
+        setChatInput('');
+        setChatLog(chatLogNew);
 
-    //Fetch response to the api, combining the Chat Log array of messages
-    //Sending it as a message to localhost:3000 as a post Request
-    const messages = chatLogNew.map(message => message.message).join('\n');
+        //Fetch response to the api, combining the Chat Log array of messages
+        //Sending it as a message to localhost:3000 as a post Request
+        const messages = chatLogNew.map(message => message.message).join('\n');
 
-    let max_tokens = 1000;
+        let max_tokens = 1000;
 
-    if (currentModel === 'code-davinci-002') {
-      max_tokens = 64;
+        if (currentModel === 'code-davinci-002') {
+          max_tokens = 64;
+        }
+
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            message: messages,
+            currentModel,
+            temperature,
+            max_tokens,
+          }),
+        });
+
+        const data = await response.json();
+
+        setChatLog([
+          ...chatLogNew,
+          { user: 'gpt', message: `${data.message}` },
+        ]);
+
+        var scrollToTheBottomChatLog =
+          document.getElementsByClassName('chat-log')[0];
+
+        scrollToTheBottomChatLog.scrollTop =
+          scrollToTheBottomChatLog.scrollHeight;
+
+        setIsLoading(false);
+      }
     }
-
-    const response = await fetch('/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        message: messages,
-        currentModel,
-        temperature,
-        max_tokens,
-      }),
-    });
-
-    const data = await response.json();
-    setChatLog([...chatLogNew, { user: 'gpt', message: `${data.message}` }]);
-    var scrollToTheBottomChatLog =
-      document.getElementsByClassName('chat-log')[0];
-    scrollToTheBottomChatLog.scrollTop = scrollToTheBottomChatLog.scrollHeight;
-    setIsLoading(false);
   };
 
   const handleTemp = temp => {
