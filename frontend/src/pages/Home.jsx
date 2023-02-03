@@ -25,7 +25,7 @@ const Home = () => {
     if (!user) {
       navigate('/login');
     }
-  }, []);
+  }, [user, navigate, dispatch]);
 
   useEffect(() => {
     setIsDisabled(chatInput.trim().length === 0);
