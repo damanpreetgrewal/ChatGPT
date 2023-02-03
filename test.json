@@ -1,0 +1,212 @@
+{
+  "models": {
+    "object": "list",
+    "data": [
+      {
+        "object": "fine-tune",
+        "id": "ft-OEExMcI98Wj1Wb3gNjo67ZTI",
+        "hyperparams": {
+          "n_epochs": 4,
+          "batch_size": 1,
+          "prompt_loss_weight": 0.01,
+          "learning_rate_multiplier": 0.1
+        },
+        "organization_id": "org-MLzVfU2zEuMPYhlLXDskog0R",
+        "model": "curie",
+        "training_files": [
+          {
+            "object": "file",
+            "id": "file-kxH21EpxOg5P4BJ4e9CxeGLv",
+            "purpose": "fine-tune",
+            "filename": "C:\\Users\\daman\\Desktop\\Coding\\chatGPT\\mental_health_prepared.jsonl",
+            "bytes": 164692,
+            "created_at": 1674965401,
+            "status": "processed",
+            "status_details": null
+          }
+        ],
+        "validation_files": [],
+        "result_files": [
+          {
+            "object": "file",
+            "id": "file-3g7kCPeLm8yQ1UfzMmUsODS7",
+            "purpose": "fine-tune-results",
+            "filename": "compiled_results.csv",
+            "bytes": 21544,
+            "created_at": 1674965665,
+            "status": "processed",
+            "status_details": null
+          }
+        ],
+        "created_at": 1674965401,
+        "updated_at": 1674965667,
+        "status": "succeeded",
+        "fine_tuned_model": "curie:ft-pwc-poc-2023-01-29-04-14-23"
+      },
+      {
+        "object": "fine-tune",
+        "id": "ft-eDD4SWUd5KM96GwCtXyKVsTm",
+        "hyperparams": {
+          "n_epochs": 4,
+          "batch_size": 1,
+          "prompt_loss_weight": 0.01,
+          "learning_rate_multiplier": 0.1
+        },
+        "organization_id": "org-MLzVfU2zEuMPYhlLXDskog0R",
+        "model": "curie",
+        "training_files": [
+          {
+            "object": "file",
+            "id": "file-fxowaJwhXut0rEAi1EqH8xdj",
+            "purpose": "fine-tune",
+            "filename": "C:\\Users\\daman\\Desktop\\Coding\\chatGPT\\pwc.jsonl",
+            "bytes": 3948,
+            "created_at": 1675183188,
+            "status": "processed",
+            "status_details": null
+          }
+        ],
+        "validation_files": [],
+        "result_files": [
+          {
+            "object": "file",
+            "id": "file-Os4ZsIS88GeG3qYdhUYnL4kG",
+            "purpose": "fine-tune-results",
+            "filename": "compiled_results.csv",
+            "bytes": 3852,
+            "created_at": 1675190836,
+            "status": "processed",
+            "status_details": null
+          }
+        ],
+        "created_at": 1675183188,
+        "updated_at": 1675190837,
+        "status": "succeeded",
+        "fine_tuned_model": "curie:ft-pwc-poc-2023-01-31-18-47-16"
+      },
+      {
+        "object": "fine-tune",
+        "id": "ft-AP0Gkxh3yB7oWBK1O618Gh2k",
+        "hyperparams": {
+          "n_epochs": 4,
+          "batch_size": 1,
+          "prompt_loss_weight": 0.01,
+          "learning_rate_multiplier": 0.1
+        },
+        "organization_id": "org-MLzVfU2zEuMPYhlLXDskog0R",
+        "model": "davinci",
+        "training_files": [
+          {
+            "object": "file",
+            "id": "file-aZCFBVnNmnykEGsXOzVRtIKW",
+            "purpose": "fine-tune",
+            "filename": "C:\\Users\\daman\\Desktop\\Coding\\chatGPT\\pwc.jsonl",
+            "bytes": 3948,
+            "created_at": 1675194094,
+            "status": "processed",
+            "status_details": null
+          }
+        ],
+        "validation_files": [],
+        "result_files": [
+          {
+            "object": "file",
+            "id": "file-WJhItnTmGMK8NaOCuITwY2Ln",
+            "purpose": "fine-tune-results",
+            "filename": "compiled_results.csv",
+            "bytes": 3877,
+            "created_at": 1675196850,
+            "status": "processed",
+            "status_details": null
+          }
+        ],
+        "created_at": 1675194095,
+        "updated_at": 1675196850,
+        "status": "succeeded",
+        "fine_tuned_model": "davinci:ft-pwc-poc-2023-01-31-20-27-29"
+      },
+      {
+        "object": "fine-tune",
+        "id": "ft-tTC6uJt6pWeOsBEfen0VimDV",
+        "hyperparams": {
+          "n_epochs": 4,
+          "batch_size": 1,
+          "prompt_loss_weight": 0.01,
+          "learning_rate_multiplier": 0.1
+        },
+        "organization_id": "org-MLzVfU2zEuMPYhlLXDskog0R",
+        "model": "davinci",
+        "training_files": [
+          {
+            "object": "file",
+            "id": "file-vHr4WHTumTug6MVWrcMAY4zE",
+            "purpose": "fine-tune",
+            "filename": "C:\\Users\\daman\\Desktop\\Coding\\chatGPT\\SampleData_ForPOC_prepared.jsonl",
+            "bytes": 5319,
+            "created_at": 1675197605,
+            "status": "processed",
+            "status_details": null
+          }
+        ],
+        "validation_files": [],
+        "result_files": [
+          {
+            "object": "file",
+            "id": "file-KU1asqGTaATmAvNyh7lehCuB",
+            "purpose": "fine-tune-results",
+            "filename": "compiled_results.csv",
+            "bytes": 4044,
+            "created_at": 1675199452,
+            "status": "processed",
+            "status_details": null
+          }
+        ],
+        "created_at": 1675197605,
+        "updated_at": 1675199452,
+        "status": "succeeded",
+        "fine_tuned_model": "davinci:ft-pwc-poc-2023-01-31-21-10-51"
+      },
+      {
+        "object": "fine-tune",
+        "id": "ft-hNP3rhZ7K4l2kdsT38O0vu6e",
+        "hyperparams": {
+          "n_epochs": 4,
+          "batch_size": 1,
+          "prompt_loss_weight": 0.01,
+          "learning_rate_multiplier": 0.1
+        },
+        "organization_id": "org-MLzVfU2zEuMPYhlLXDskog0R",
+        "model": "davinci:ft-pwc-poc-2023-01-31-21-10-51",
+        "training_files": [
+          {
+            "object": "file",
+            "id": "file-eq3u3W4HqOdtKVENH7LiQ9Ht",
+            "purpose": "fine-tune",
+            "filename": "C:\\Users\\daman\\Desktop\\Coding\\chatGPT\\SampleData_ForPOC_prepared.jsonl",
+            "bytes": 5319,
+            "created_at": 1675270708,
+            "status": "processed",
+            "status_details": null
+          }
+        ],
+        "validation_files": [],
+        "result_files": [
+          {
+            "object": "file",
+            "id": "file-wrzS69jctbVtkyUaghfp3MZI",
+            "purpose": "fine-tune-results",
+            "filename": "compiled_results.csv",
+            "bytes": 4009,
+            "created_at": 1675273582,
+            "status": "processed",
+            "status_details": null
+          }
+        ],
+        "created_at": 1675270708,
+        "updated_at": 1675273583,
+        "status": "succeeded",
+        "fine_tuned_model": "davinci:ft-pwc-poc-2023-02-01-17-46-21"
+      }
+    ]
+  }
+}

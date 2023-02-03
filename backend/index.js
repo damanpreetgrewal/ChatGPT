@@ -58,8 +58,10 @@ app.post('/', async (req, res) => {
 
 //Get Models Route
 app.get('/models', async (req, res) => {
-  const response = await openai.listEngines();
-  res.json({ models: response.data });
+  const response = await openai.listFineTunes();
+  res.json({
+    models: response.data.models,
+  });
 });
 
 //Serve Frontend
