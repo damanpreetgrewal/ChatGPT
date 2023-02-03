@@ -1,8 +1,19 @@
 const dotenv = require('dotenv').config();
+const colors = require('colors');
 const path = require('path');
 const express = require('express');
 const { Configuration, OpenAIApi } = require('openai');
 const sampleData = require('./SampleData');
+const port = process.env.PORT || 5000;
+
+const connectDb = require('./config/db');
+const userRoutes = require('./routes/userRoutes');
+const { errorHandler } = require('./middleware/errorMiddleware');
+
+const app = express();
+
+//Connect to database
+connectDb();
 
 const configuration = new Configuration({
   organization: process.env.OPENAI_ORG_ID,
@@ -15,12 +26,10 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const { response } = require('express');
 
-const app = express();
-
 app.use(bodyParser.json());
 app.use(cors());
 
-const port = process.env.PORT || 5000;
+app.use('/api/users', userRoutes);
 
 app.post('/', async (req, res) => {
   const { message, currentModel, temperature, max_tokens } = req.body;
@@ -75,6 +84,8 @@ if (process.env.NODE_ENV === 'production') {
     res.send('API is running...');
   });
 }
+
+app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`ChatGPT Server listening at ${port}`);
