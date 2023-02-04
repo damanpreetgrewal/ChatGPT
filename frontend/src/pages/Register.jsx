@@ -68,7 +68,7 @@ function Register() {
         <h1>
           <FaUser /> Register
         </h1>
-        <p>Please create an account</p>
+        <p>Please create an account with a randon email id</p>
       </section>
 
       <section className='form'>
