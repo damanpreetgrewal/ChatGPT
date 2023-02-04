@@ -7,8 +7,8 @@ const User = require('../models/User');
 // @route POST /api/users
 // @access Public
 const registerUser = asyncHandler(async (req, res, next) => {
-  const { name, email, password } = req.body;
-  if (!name || !email || !password) {
+  const { email, password } = req.body;
+  if ( !email || !password) {
     res.status(400);
     throw new Error('Please add all fields');
   }
@@ -23,7 +23,6 @@ const registerUser = asyncHandler(async (req, res, next) => {
   const hashedPassword = await bcrypt.hash(password, salt);
   //Create new user
   const user = await User.create({
-    name,
     email,
     password: hashedPassword,
   });
@@ -31,7 +30,6 @@ const registerUser = asyncHandler(async (req, res, next) => {
   if (user) {
     res.status(201).json({
       _id: user._id,
-      name: user.name,
       email: user.email,
       token: generateToken(user._id),
     });
@@ -55,7 +53,6 @@ const loginUser = asyncHandler(async (req, res, next) => {
   if (user && (await bcrypt.compare(password, user.password))) {
     res.status(200).json({
       _id: user._id,
-      name: user.name,
       email: user.email,
       token: generateToken(user._id),
     });
