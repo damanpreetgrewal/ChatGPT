@@ -17,7 +17,7 @@ function Header() {
   return (
     <header className='header'>
       <div className='logo'>
-        <Link to='/'>ChatGPT</Link>
+        <Link to='/'>ChatGPT 2.0</Link>
       </div>
       <ul>
         {user ? (
