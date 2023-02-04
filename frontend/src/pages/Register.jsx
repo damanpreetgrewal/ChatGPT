@@ -63,7 +63,7 @@ function Register() {
   }
 
   return (
-    <>
+    <div className='Container'>
       <section className='heading'>
         <h1>
           <FaUser /> Register
@@ -124,7 +124,7 @@ function Register() {
           </div>
         </form>
       </section>
-    </>
+    </div>
   );
 }
 
