@@ -68,7 +68,7 @@ const Home = () => {
         //Sending it as a message to localhost:3000 as a post Request
         const messages = chatLogNew.map(message => message.message).join('\n');
 
-        let max_tokens = 1000;
+        let max_tokens = 100;
 
         if (currentModel === 'code-davinci-002') {
           max_tokens = 64;

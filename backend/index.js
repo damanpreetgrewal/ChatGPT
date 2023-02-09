@@ -45,16 +45,18 @@ app.post('/', async (req, res) => {
   // console.log(prePrompt);
 
   const requestObj = {
-    model: `${currentModel}`, //"text-davinci-003",
+    // model: `${currentModel}`, //"text-davinci-003",
+    model: 'text-davinci-003',
     prompt: `${prePrompt} ${message}\n`,
     max_tokens,
     temperature,
     top_p: 1,
     frequency_penalty: 0.0,
     presence_penalty: 0.0,
+    // stop: ['\n'],
   };
 
-  // console.log('Request Sent : ', requestObj);
+  console.log('Request Sent : ', requestObj);
 
   const response = await openai.createCompletion(requestObj);
 
@@ -67,7 +69,7 @@ app.post('/', async (req, res) => {
 
 //Get Models Route
 app.get('/models', async (req, res) => {
-  const response = await openai.listEngines();
+  const response = await openai.listFineTunes();
   res.json({
     models: response.data,
   });
