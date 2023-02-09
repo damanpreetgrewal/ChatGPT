@@ -87,13 +87,14 @@ const SideMenu = ({
       <div className='side-menu-button' onClick={clearChat}>
         <span>+</span>New Chat
       </div>
-      <br />
+      <br/>
+      <hr />
       <Button
         text={revealParams ? 'Hide Params' : 'Show Params'}
         onClick={() => toggleParams()}
       />
       {revealParams && paramsContent}
-      <br />
+      <hr />
       <Button text='Logout' onClick={() => onLogout()} />
     </aside>
   );
