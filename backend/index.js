@@ -36,11 +36,11 @@ app.post('/', async (req, res) => {
 
   // console.log(sampleData);
 
-  let prePrompt =
-    'I am a highly intelligent question answering bot for PwC. If you ask me a question that is rooted in truth, I will give you the answer.';
-  sampleData.forEach(obj => {
-    prePrompt += 'Q :' + obj.Q + '\n' + 'A :' + obj.A + '\n\n';
-  });
+  // let prePrompt =
+  //   'I am a highly intelligent question answering bot for PwC. If you ask me a question that is rooted in truth, I will give you the answer.';
+  // sampleData.forEach(obj => {
+  //   prePrompt += 'Q :' + obj.Q + '\n' + 'A :' + obj.A + '\n\n';
+  // });
 
   // console.log(prePrompt);
 
@@ -69,7 +69,8 @@ app.post('/', async (req, res) => {
 
 //Get Models Route
 app.get('/models', async (req, res) => {
-  const response = await openai.listFineTunes();
+  const response = await openai.listEngines();
+  console.log(response.data);
   res.json({
     models: response.data,
   });

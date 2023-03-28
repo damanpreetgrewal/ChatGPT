@@ -39,8 +39,8 @@ const SideMenu = ({
         >
           {models && models.length ? (
             models.map((model, index) => (
-              <option key={model.id} value={model.fine_tuned_model}>
-                {model.fine_tuned_model}
+              <option key={model.id} value={model.id}>
+                {model.id}
               </option>
             ))
           ) : (
