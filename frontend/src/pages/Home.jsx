@@ -21,10 +21,6 @@ const Home = () => {
 
   useEffect(() => {
     getModels();
-
-    if (!user) {
-      navigate('/login');
-    }
   }, [user, navigate, dispatch]);
 
   useEffect(() => {
