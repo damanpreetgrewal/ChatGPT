@@ -26,8 +26,8 @@ function App() {
               <>
                 {/* other auth required routes */}
                 <Route path='/' element={<Home />} />
+                {/* should show some feedback to the user that he's already logged in */}
                 <Route path='/login' element={<Login />} />
-                <Route path='/register' element={<Register />} />
               </>
             )}
           </Routes>
