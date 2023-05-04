@@ -95,7 +95,7 @@ const SideMenu = ({
       />
       {revealParams && paramsContent}
       <hr />
-      <Button text='Logout' onClick={() => onLogout()} />
+      {/* <Button text='Logout' onClick={() => onLogout()} /> */}
     </aside>
   );
 };

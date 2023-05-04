@@ -16,19 +16,19 @@ function App() {
         <div className='container'>
           <Header />
           <Routes>
-            {!user ? (
+            { (
               <>
-                <Route path='/' element={<Login />} />
-                <Route path='/login' element={<Login />} />
-                <Route path='/register' element={<Register />} />
-              </>
-            ) : (
-              <>
-                {/* other auth required routes */}
                 <Route path='/' element={<Home />} />
-                {/* should show some feedback to the user that he's already logged in */}
-                <Route path='/login' element={<Login />} />
+                {/* <Route path='/login' element={<Login />} />
+                <Route path='/register' element={<Register />} /> */}
               </>
+            // ) : (
+            //   <>
+            //     {/* other auth required routes */}
+            //     <Route path='/' element={<Home />} />
+            //     {/* should show some feedback to the user that he's already logged in */}
+            //     <Route path='/login' element={<Login />} />
+            //   </>
             )}
           </Routes>
         </div>
